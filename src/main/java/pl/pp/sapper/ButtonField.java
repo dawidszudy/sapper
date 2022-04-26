@@ -98,7 +98,7 @@ public class ButtonField extends JButton {
             timer.stop();
             setText(bombCharacter);
             setBackground(Color.RED);
-            JOptionPane.showMessageDialog(mainFrame, "Przegrałeś!", "Koniec gry", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(mainFrame, "You lost the game!", "Game over", JOptionPane.ERROR_MESSAGE);
             resetGame();
         } else if ( neighborBombAmount == 0 ) {
             setBackground(Color.LIGHT_GRAY);
@@ -112,7 +112,7 @@ public class ButtonField extends JButton {
         if ( isWin() ) {
             timer.stop();
             stopButton.setEnabled(false);
-            JOptionPane.showMessageDialog(mainFrame, "Gratulacje! Wygrałeś!");
+            JOptionPane.showMessageDialog(mainFrame, "Congratulations! You won!");
             stopRoll = true;
             resetGame();
 

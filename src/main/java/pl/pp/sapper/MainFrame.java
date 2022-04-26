@@ -10,7 +10,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Saper");
+        setTitle("Sapper");
         setBounds(100, 100, 600, 400);
 
         JPanel fieldsPanel = new JPanel();
@@ -36,13 +36,13 @@ public class MainFrame extends JFrame {
 
         bombInfoLabel = new JLabel(0 + "/" + bombAmounts, JLabel.RIGHT);
         timeInfoLabel = new JLabel("00:00", JLabel.RIGHT);
-        JButton resetButton = new JButton("Resetuj");
-        stopButton = new JButton("Zatrzymaj");
+        JButton resetButton = new JButton("Reset");
+        stopButton = new JButton("Stop");
 
 
         resetButton.addActionListener(actionEvent -> {
             int resultReset = JOptionPane.showConfirmDialog
-                    (this, "Czy chcesz zresetować grę", "Reset gry", JOptionPane.YES_NO_OPTION);
+                    (this, "Do you want reset the game?", "Game reset", JOptionPane.YES_NO_OPTION);
             if ( resultReset == 0 ) {
                 resetGame();
             }
@@ -52,12 +52,12 @@ public class MainFrame extends JFrame {
         stopButton.addActionListener(actionEvent -> {
             if ( gameRunning ) {
                 timer.stop();
-                stopButton.setText("Wznów");
+                stopButton.setText("Resume");
                 gameRunning = false;
                 buttonFieldList.forEach(ButtonField::stopShow);
             } else {
                 timer.start();
-                stopButton.setText("Zatrzymaj");
+                stopButton.setText("Stop");
                 gameRunning = true;
                 buttonFieldList.forEach(ButtonField::startShow);
             }
